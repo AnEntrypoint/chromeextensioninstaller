@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-const { installChromeExtension } = require('../lib/installer');
+const { execSync } = require('child_process');
+const path = require('path');
 const os = require('os');
 
 const args = process.argv.slice(2);
@@ -25,12 +26,16 @@ if (os.platform() !== 'linux') {
   process.exit(1);
 }
 
-console.log(`Installing Chrome extension: ${extensionName} (${extensionId})...`);
-const success = installChromeExtension(extensionId, extensionName);
+const installerScript = path.join(__dirname, '..', 'lib', 'installer.sh');
 
-if (!success) {
+try {
+  execSync(`chmod +x "${installerScript}"`);
+  console.log(`Installing Chrome extension: ${extensionName} (${extensionId})...`);
+  execSync(`bash -c 'source "${installerScript}" && install_chrome_extension "${extensionId}" "${extensionName}"'`, {
+    stdio: 'inherit'
+  });
+  console.log(`\nChrome extension installation completed!`);
+} catch (error) {
   console.error('Make sure you are running this with appropriate permissions (may require sudo)');
   process.exit(1);
 }
-
-console.log(`\nChrome extension installation completed!`);
