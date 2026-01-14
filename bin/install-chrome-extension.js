@@ -5,20 +5,20 @@ const os = require('os');
 
 const args = process.argv.slice(2);
 
-if (args.length < 2) {
-  console.error('Usage: chromeextensioninstaller <extension-id> <extension-name>');
+if (args.length < 1) {
+  console.error('Usage: chromeextensioninstaller <extension-id> [extension-name]');
   console.error('');
   console.error('Arguments:');
-  console.error('  extension-id    - The Chrome/Chromium extension ID');
-  console.error('  extension-name  - A friendly name for the extension');
+  console.error('  extension-id    - The Chrome/Chromium extension ID (required)');
+  console.error('  extension-name  - A friendly name for the extension (optional)');
   console.error('');
   console.error('Example:');
-  console.error('  npx chromeextensioninstaller abcdefghijklmnopqrstuvwxyz123456 "My Extension"');
+  console.error('  chromeextensioninstaller jfeammnjpkecdekppnclgkkffahnhfhe "React DevTools"');
   process.exit(1);
 }
 
 const extensionId = args[0];
-const extensionName = args[1];
+const extensionName = args[1] || extensionId;
 
 if (os.platform() !== 'linux') {
   console.error('Error: This tool only works on Linux systems');
