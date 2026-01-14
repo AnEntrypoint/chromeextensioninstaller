@@ -1,7 +1,7 @@
 {
   "name": "chromeextensioninstaller",
   "version": "1.0.0",
-  "description": "Install Chrome extensions via npx with automatic Chrome installation",
+  "description": "Install Chrome/Chromium extensions via npx with automatic Chrome installation",
   "main": "lib/installer.js",
   "bin": {
     "chromeextensioninstaller": "bin/install-chrome-extension.js"

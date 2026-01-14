@@ -10,7 +10,7 @@ if (args.length < 2) {
   console.error('Usage: chromeextensioninstaller <extension-id> <extension-name>');
   console.error('');
   console.error('Arguments:');
-  console.error('  extension-id    - The Chrome extension ID');
+  console.error('  extension-id    - The Chrome/Chromium extension ID');
   console.error('  extension-name  - A friendly name for the extension');
   console.error('');
   console.error('Example:');
