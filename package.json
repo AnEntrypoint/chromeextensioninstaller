@@ -1,0 +1,31 @@
+{
+  "name": "chromeextensioninstaller",
+  "version": "1.0.0",
+  "description": "Install Chrome extensions via npx with automatic Chrome installation",
+  "main": "lib/installer.js",
+  "bin": {
+    "chromeextensioninstaller": "bin/install-chrome-extension.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnEntrypoint/chromeextensioninstaller.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "installer",
+    "chromium"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AnEntrypoint/chromeextensioninstaller/issues"
+  },
+  "homepage": "https://github.com/AnEntrypoint/chromeextensioninstaller#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
